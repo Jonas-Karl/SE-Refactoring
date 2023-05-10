@@ -7,7 +7,12 @@ class Customer {
 
     public Customer(String newname) {
         name = newname;
-    };
+    }
+
+    public Vector getRentals() {
+        return rentals;
+    }
+
     public void addRental(Rental arg) {
         rentals.addElement(arg);
     }
