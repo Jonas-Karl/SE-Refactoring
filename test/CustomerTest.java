@@ -67,6 +67,19 @@ public class CustomerTest {
         assertTrue(customerObject.statement().contains(String.valueOf(someDays)));
     }
 
+    @Test
+    public void htmlStatementTest(){
+        String someMovieTitle = "someMovieTitle";
+        int someDays = 12;
+        Movie someMovie = new Movie(someMovieTitle, Movie.REGULAR);
+        Rental someRental = new Rental(someMovie, someDays);
+
+
+        customerObject.addRental(someRental);
+
+        assertTrue(customerObject.htmlStatement().startsWith("<H1>Rentals for <EM>" + customerName));
+        assertTrue(customerObject.htmlStatement().contains(someMovieTitle));
+    }
 
 }
     
